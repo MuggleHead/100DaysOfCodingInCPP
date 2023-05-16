@@ -1,0 +1,24 @@
+class Solution {
+public:
+    vector<int> findDuplicates(vector<int>& nums) {
+        int c=0;
+        vector<int> v;
+        for(int i=1;i<=nums.size();i++)
+        {c=0;
+            for(int j=0;j<nums.size();j++)
+            {
+                if(nums[j]==i)
+                {
+                    c++;
+                    if(c==2)
+                    {
+                        v.push_back(i);
+                        c=0;
+                        break;
+                    }
+                }
+            }
+        }
+        return v;
+    }
+};
