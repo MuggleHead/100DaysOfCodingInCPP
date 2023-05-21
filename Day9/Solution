@@ -1,0 +1,18 @@
+class Solution {
+public:
+    string reverseWords(string s) {
+        string str="",word;
+        // Takes only space separated C++ strings.
+        stringstream ss(s);
+        //extract a word
+        while (ss >> word)
+        {
+            str=" "+word+str;
+
+        }
+        //using in-built function to erase element
+            str.erase(str.begin());
+        return str;
+        
+    }
+};
