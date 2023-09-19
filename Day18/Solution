@@ -1,0 +1,27 @@
+class Solution {
+public:
+    char slowestKey(vector<int>& releaseTimes, string keysPressed) {
+        int calci=0,max=0,index=0;
+        for(int it=0;it<releaseTimes.size();it++)
+        {
+            if(it==0)
+            calci=releaseTimes.at(it)-0;
+            else
+            calci=releaseTimes.at(it)-releaseTimes.at(it-1);
+            if(calci>max)
+            {
+                max=calci;
+                index=it;
+            }
+            if(calci==max)
+            {
+                if(keysPressed.at(it)>keysPressed.at(index))
+                index=it;
+                else
+                index=index;
+            }
+            
+        }
+        return keysPressed.at(index);
+    }
+};
